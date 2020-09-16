@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<a (click)="onSelected()">
+  <div class="list-group-item w-100" style="display: flex; justify-content: space-between">
+    <div style="margin-right: 16px;">
+      <h5 class="card-title">{{ recipe.name }}</h5>
+      <p class="card-text">{{ recipe.description }}</p>
+    </div>
+    <img style="max-height: 50px;" [src]="recipe.imagePath" [alt]="recipe.name">
+  </div>
+</a>
