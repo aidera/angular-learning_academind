@@ -9,8 +9,8 @@ export class DropdownDirective implements AfterViewInit {
   @HostBinding('class.show') isOpen = false;
 
   // Вызываем функцию бинда
-  @HostListener('click') toggleOpen(): void {
-    this.isOpen = !this.isOpen;
+  @HostListener('document:click', ['$event']) toggleOpen(event: Event): void {
+    this.isOpen = this.el.nativeElement.contains(event.target) ? !this.isOpen : false;
     this.setActiveClassToChildElements();
   }
 
