@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs';
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
-  sub: Subscription;
+  private sub: Subscription;
 
   constructor(
     private shoppingListService: ShoppingListService
