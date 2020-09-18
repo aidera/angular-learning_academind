@@ -1,10 +1,11 @@
-<button class="btn btn-success">New Recipe</button>
+<button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
 <hr>
 
 <div class="list-group w-100">
   <app-recipe-item
-    *ngFor="let recipe of recipes"
+    *ngFor="let recipe of recipes; let i = index"
     [recipe]="recipe"
+    [id]="i"
   ></app-recipe-item>
 </div>
 
