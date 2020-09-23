@@ -24,6 +24,8 @@ import {AuthService} from './services/auth.service';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import {AuthInterceptor} from './components/auth/auth.interceptor';
 import {AuthGuard} from './components/auth/auth.guard';
+import { AlertComponent } from './shared/components/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {AuthGuard} from './components/auth/auth.guard';
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
