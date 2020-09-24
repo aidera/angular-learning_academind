@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {BehaviorSubject, Observable, throwError} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
-import {User} from '../components/auth/user.model';
+import {User} from '../models/user.model';
 import {Router} from '@angular/router';
 
 export interface AuthResponseData {
