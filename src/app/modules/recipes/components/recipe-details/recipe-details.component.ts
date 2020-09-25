@@ -21,7 +21,7 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) {
   }
 

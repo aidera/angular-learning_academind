@@ -17,7 +17,7 @@ import * as RecipesActions from '../../../store/recipe/recipe.actions';
 export class RecipesResolver implements Resolve<Recipe[]>{
 
   constructor(
-    private store: Store<fromRoot.AppStateType>,
+    private store: Store<fromRoot.State>,
     private actions$: Actions
   ) { }
 

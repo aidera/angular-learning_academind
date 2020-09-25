@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private user$: Subscription;
 
   constructor(
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +45,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onLogout(): void {
-    this.store.dispatch(new AuthActions.Logout());
+    this.store.dispatch(AuthActions.logout());
   }
 }

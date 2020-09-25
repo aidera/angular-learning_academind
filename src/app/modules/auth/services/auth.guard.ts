@@ -12,7 +12,7 @@ import * as fromRoot from '../../../store/root.reducer';
 export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   canActivate(

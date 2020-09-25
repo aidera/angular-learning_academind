@@ -15,7 +15,7 @@ export class DataStorageService {
   constructor(
     private http: HttpClient,
     private recipesService: RecipeService,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   storeRecipes(): void {

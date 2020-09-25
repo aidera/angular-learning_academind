@@ -21,7 +21,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit(): void {

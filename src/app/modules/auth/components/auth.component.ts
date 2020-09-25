@@ -1,12 +1,14 @@
 import {Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Subscription} from 'rxjs';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 
 import {AlertComponent} from '../../../shared/components/alert/alert.component';
 import {PlaceholderDirective} from '../../../shared/placeholder.directive';
 import * as fromRoot from '../../../store/root.reducer';
 import * as AuthActions from '../../../store/auth/auth.actions';
+import * as fromAuth from '../../../store/auth/auth.reducer';
+import * as AuthSelectors from '../../../store/auth/auth.selectors';
 
 
 
@@ -26,11 +28,14 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) {
   }
 
   ngOnInit(): void {
+    this.store.pipe(
+      select(AuthSelectors.selectAuth)
+    ).subscribe(a => console.log(a));
     this.store$ = this.store.select('auth').subscribe(authState => {
       this.isLoading = authState.loading;
       this.error = authState.authError;
@@ -51,16 +56,16 @@ export class AuthComponent implements OnInit, OnDestroy {
 
       this.isLoading = true;
       if (this.isLoginMode) {
-        this.store.dispatch(new AuthActions.LoginStart({email, password}));
+        this.store.dispatch(AuthActions.loginStart({email, password}));
       } else {
-        this.store.dispatch(new AuthActions.SignupStart({email, password}));
+        this.store.dispatch(AuthActions.signupStart({email, password}));
       }
 
     }
   }
 
   onHandleError(): void {
-    this.store.dispatch(new AuthActions.ClearError());
+    this.store.dispatch(AuthActions.clearError());
   }
 
   private showErrorAlert(message: string): void {

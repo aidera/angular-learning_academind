@@ -16,7 +16,7 @@ export class ShoppingListComponent implements OnInit {
   ingredients: Observable<{ingredients: Ingredient[]}>;
 
   constructor(
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit(): void {

@@ -11,7 +11,7 @@ import * as fromRoot from '../../../store/root.reducer';
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) {
   }
 

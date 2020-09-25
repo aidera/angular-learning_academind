@@ -17,7 +17,7 @@ export class RecipeService {
 
   constructor(
     private shoppingListService: ShoppingListService,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   getRecipes(): Recipe[] {
@@ -34,7 +34,6 @@ export class RecipeService {
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]): void {
-    // this.shoppingListService.addIngredients(ingredients);
     this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
   }
 

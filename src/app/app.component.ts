@@ -16,12 +16,11 @@ export class AppComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private loggingService: LoggingService,
-    private store: Store<fromRoot.AppStateType>
+    private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit(): void {
-    // this.authService.autoLogin();
-    this.store.dispatch(new AuthActions.AutoLogin());
+    this.store.dispatch(AuthActions.autoLogin());
     this.loggingService.printLog('Hello from AppComponent ngOnInit');
   }
 }
