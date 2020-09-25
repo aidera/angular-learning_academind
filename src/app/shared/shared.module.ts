@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AlertComponent} from './components/alert/alert.component';
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import {PlaceholderDirective} from './placeholder.directive';
 import {DropdownDirective} from './dropdown.directive';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
